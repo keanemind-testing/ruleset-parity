@@ -1,0 +1,21 @@
+# Ruleset parity harness: a check that reports on merge-group commits.
+# Required by rulesets as the status check "parity-mq-check" (source: GitHub Actions).
+# PARITY_MQ_CHECK_DELAY_SECONDS (repository variable) delays the report; unset means 0.
+# PARITY_MQ_CHECK_CONCLUSION (repository variable) "failure" makes it fail; anything else passes.
+name: parity-mq-check
+on:
+  merge_group:
+  pull_request:
+    branches: ["parity/**"]
+jobs:
+  parity-mq-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: report after the configured delay
+        env:
+          DELAY: ${{ vars.PARITY_MQ_CHECK_DELAY_SECONDS || '0' }}
+          CONCLUSION: ${{ vars.PARITY_MQ_CHECK_CONCLUSION || 'success' }}
+        run: |
+          echo "event=${{ github.event_name }} ref=${{ github.ref }} sha=${{ github.sha }} delay=${DELAY}s conclusion=${CONCLUSION}"
+          sleep "${DELAY}"
+          test "${CONCLUSION}" != "failure"
