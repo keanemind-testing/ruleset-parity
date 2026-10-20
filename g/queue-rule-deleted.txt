@@ -1,0 +1,1 @@
+mq-live g queue-rule-deleted
