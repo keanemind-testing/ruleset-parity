@@ -1,5 +1,5 @@
 control-conflict 261113194504
-line 1
+head
 line 2
 line 3
 line 4
