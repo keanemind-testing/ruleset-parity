@@ -1,2 +1,2 @@
-measure 261116202546 both-out line one
+measure 261116202546 both-out line one, changed
 line two
