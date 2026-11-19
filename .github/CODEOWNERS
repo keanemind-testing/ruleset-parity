@@ -1,0 +1,7 @@
+* @keanemind-testing/measure-261119015811-testing-c118-c
+withuser/** @keanemind @testing-261119015811-c118-ghost
+withteam/** @keanemind @keanemind-testing/testing-261119015811-c118-no-such-team
+withbot/** @keanemind @keanemind-testing-app[bot]
+teamonly/** @keanemind-testing/testing-261119015811-c118-no-such-team
+useronly/** @testing-261119015811-c118-ghost
+solo/** @keanemind
