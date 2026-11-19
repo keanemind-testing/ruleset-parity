@@ -1,0 +1,12 @@
+name: testing-261119023908-c123
+on:
+  push:
+    branches: ['measure/261119023908/testing-c123-run-*']
+permissions: {}
+jobs:
+  x:
+    name: testing-261119023908-c123
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - run: test "${GITHUB_REF_NAME##*-}" = pass
